@@ -1,0 +1,477 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><style>
+@page {
+    size: A4;
+    margin: 2.2cm 2.4cm;
+    
+    @bottom-center { content: counter(page); font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 9pt; color: #999; }
+}
+@page :first { @top-center { content: none; } @bottom-center { content: none; } }
+@page cover { margin: 2.4cm; @top-center { content: none; } @bottom-center { content: none; } }
+
+body {
+    font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+body p, body li { text-align: left; }
+h1.doc-title { string-set: doctitle content(); }
+h1, h2, h3 { break-after: avoid; }
+figure, table, pre { break-inside: avoid; }
+
+p { margin: 0 0 0.7em; orphans: 3; widows: 3; }
+
+ul, ol { margin: 0 0 0.7em 1.4em; }
+li { margin: 0 0 0.2em; }
+hr { border: none; border-top: 0.5pt solid #bbb; width: 30%; margin: 1.6em auto; }
+code { font-family: 'Liberation Mono', 'DejaVu Sans Mono', monospace; font-size: 10pt; background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
+pre { font-family: 'Liberation Mono', 'DejaVu Sans Mono', monospace; background: #f6f6f6; padding: 11px 13px; border-radius: 5px; white-space: pre-wrap; font-size: 10pt; line-height: 1.45; text-align: left; }
+pre code { background: none; padding: 0; }
+blockquote { margin: 0.8em 0; padding: 0.2em 0 0.2em 1em; border-left: 3px solid #11111133; color: #555; font-style: italic; }
+/* Images span up to the content width, block-level + centered. Charts are
+   rendered page-width (see _size_chart_spec), so max-width:100% makes them fill
+   the page like the UI shows them; an uploaded image keeps its natural size
+   (never upscaled past the content width). The height cap keeps a very tall
+   image (a long screenshot) from taking a whole page. */
+img { max-width: 100%; max-height: 20cm; display: block; margin: 0.8em auto; }
+figure { margin: 1.1em 0; }
+figure img { margin: 0 auto; }
+body { counter-reset: fig; }
+figure.fig-captioned { counter-increment: fig; }
+figcaption::before { content: "Figure " counter(fig) " — "; }
+
+div.cover { page: cover; page-break-after: always; }
+div.cover .cover-inner { padding-top: 7.6cm; }
+div.cover .cover-rule { width: 60px; height: 3px; background: #111111; margin: 0 0 1.4em; }
+div.cover h1.doc-title { font-size: 30pt; text-align: left; border: none; padding: 0; margin: 0 0 0.35em; }
+div.cover p.subtitle { text-align: left; }
+
+nav.toc { margin: 0 0 1.8em; padding-bottom: 1em; border-bottom: 0.5pt solid #ccc; }
+nav.toc.toc-break { page-break-after: always; border-bottom: none; }
+nav.toc .toc-entry { margin: 0.18em 0; }
+nav.toc .toc-l3 { margin-left: 1.2em; font-size: 88%; color: #555; }
+nav.toc a { text-decoration: none; color: inherit; }
+
+
+
+h1 { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 24pt; font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; text-align: left; color: #111; margin: 0 0 0.25em; }
+p.subtitle { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 12pt; color: #555; text-align: left; margin: 0 0 0.5em; }
+header.title-block { margin: 0 0 1.8em; }
+h2 { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14pt; font-weight: 700; color: #111111; margin: 1.5em 0 0.45em; }
+h3 { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 11.5pt; font-weight: 700; color: #444; margin: 1.3em 0 0.35em; }
+table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: 9.5pt; }
+th { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.08em; text-align: left; padding: 6px 10px; border-bottom: 1.5px solid #111111; }
+td { padding: 6px 10px; border-bottom: 0.5pt solid #ddd; text-align: left; }
+figcaption { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 9pt; color: #555; text-align: center; margin-top: 0.6em; }
+
+</style></head><body><header class="title-block"><h1 class="doc-title">index</h1></header><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Mallorca 312">
+<meta name="theme-color" content="#0b6e4f">
+<title>Mallorca 312 - Entrenamiento</title>
+<style>
+  :root { --main:#0b6e4f; --accent:#f4a261; --bg:#f4f6f5; --card:#fff; --text:#1d2521; --muted:#6b7770; --danger:#c0392b; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); padding-bottom:calc(72px + env(safe-area-inset-bottom)); }
+  header { background:var(--main); color:#fff; padding:calc(14px + env(safe-area-inset-top)) 16px 14px; position:sticky; top:0; z-index:5; }
+  header h1 { margin:0; font-size:20px; }
+  header p { margin:2px 0 0; font-size:13px; opacity:.85; }
+  main { padding:14px; }
+  section { display:none; }
+  section.active { display:block; }
+  .card { background:var(--card); border-radius:14px; padding:14px; margin-bottom:12px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+  .card h2 { font-size:16px; margin:0 0 10px; }
+  .big { font-size:34px; font-weight:700; color:var(--main); }
+  .stats { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; text-align:center; }
+  .stats div { background:var(--bg); border-radius:10px; padding:10px 4px; }
+  .stats b { display:block; font-size:18px; }
+  .stats span { font-size:11px; color:var(--muted); }
+  label { display:block; font-size:13px; color:var(--muted); margin:10px 0 4px; }
+  input, select, textarea { width:100%; font-size:16px; padding:11px; border:1px solid #d5dcd8; border-radius:10px; background:#fff; font-family:inherit; }
+  textarea { min-height:90px; resize:vertical; }
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  button { font-size:16px; border:none; border-radius:12px; padding:12px; background:var(--main); color:#fff; width:100%; margin-top:12px; font-weight:600; }
+  button.secondary { background:#e6ece9; color:var(--text); }
+  button.danger { background:var(--danger); }
+  .item { border-bottom:1px solid #eef1ef; padding:10px 0; }
+  .item:last-child { border-bottom:none; }
+  .item small { color:var(--muted); }
+  .tag { display:inline-block; font-size:11px; background:#e3f2ec; color:var(--main); border-radius:6px; padding:2px 6px; margin-left:4px; }
+  .cal { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; text-align:center; }
+  .cal .h { font-size:11px; color:var(--muted); }
+  .cal .d { padding:8px 0; border-radius:8px; background:#eef1ef; font-size:14px; cursor:pointer; }
+  .cal .d.ok { background:var(--main); color:#fff; }
+  .cal .d.empty { background:transparent; }
+  .cal .d.today { outline:2px solid var(--accent); }
+  nav { position:fixed; bottom:0; left:0; right:0; background:#fff; display:flex; border-top:1px solid #e0e6e2; padding-bottom:env(safe-area-inset-bottom); z-index:10; }
+  nav button { background:none; color:var(--muted); margin:0; padding:8px 0 10px; font-size:11px; border-radius:0; font-weight:500; }
+  nav button.on { color:var(--main); font-weight:700; }
+  .aviso { font-size:12px; color:var(--muted); margin-top:8px; }
+  .phase { border-left:4px solid var(--accent); padding-left:10px; margin-bottom:12px; }
+  .phase h3 { margin:0 0 4px; font-size:15px; }
+  .phase ul { margin:6px 0 0; padding-left:18px; font-size:14px; }
+  .phase li { margin-bottom:3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mallorca 312</h1>
+  <p id="subtitulo">Preparación 2027</p>
+</header>
+
+<main>
+
+  <section id="s-inicio" class="active">
+    <div class="card">
+      <h2>Cuenta atrás</h2>
+      <div class="big" id="dias">--</div>
+      <div class="aviso" id="fechaEvento"></div>
+    </div>
+    <div class="card">
+      <h2>Resumen últimos 7 días</h2>
+      <div class="stats">
+        <div><b id="r-km">0</b><span>km</span></div>
+        <div><b id="r-desn">0</b><span>m desnivel</span></div>
+        <div><b id="r-h">0</b><span>horas</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Totales de la temporada</h2>
+      <div class="stats">
+        <div><b id="t-km">0</b><span>km</span></div>
+        <div><b id="t-sal">0</b><span>salidas</span></div>
+        <div><b id="t-desn">0</b><span>m desnivel</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Consejo de hoy</h2>
+      <p id="consejo" style="margin:0;font-size:15px;line-height:1.4"></p>
+    </div>
+  </section>
+
+  <section id="s-entrenos">
+    <div class="card">
+      <h2>Registrar salida</h2>
+      <label>Fecha</label>
+      <input type="date" id="f-fecha">
+      <div class="row">
+        <div><label>Tipo</label>
+          <select id="f-tipo">
+            <option>Rodaje base</option><option>Fondo largo</option><option>Subidas</option>
+            <option>Umbral / intervalos</option><option>Recuperación</option><option>Rodillo / gimnasio</option>
+          </select></div>
+        <div><label>Sensación (1-10)</label><input type="number" id="f-rpe" min="1" max="10" value="5"></div>
+      </div>
+      <div class="row">
+        <div><label>Distancia (km)</label><input type="number" id="f-km" step="0.1"></div>
+        <div><label>Desnivel (m)</label><input type="number" id="f-desn"></div>
+      </div>
+      <div class="row">
+        <div><label>Tiempo (h:mm)</label><input type="text" id="f-tiempo" placeholder="3:30"></div>
+        <div><label>Potencia media (W)</label><input type="number" id="f-pot"></div>
+      </div>
+      <label>Notas</label>
+      <textarea id="f-notas" placeholder="Cómo fue, molestias, clima..."></textarea>
+      <button onclick="guardarEntreno()">Guardar salida</button>
+    </div>
+
+    <div class="card">
+      <h2>Importar desde Strava (archivo GPX)</h2>
+      <p class="aviso" style="margin-top:0">En Strava: abre la actividad → ⋯ → Exportar GPX. Luego elige el archivo aquí.</p>
+      <input type="file" id="gpx" accept=".gpx" onchange="importarGPX(event)">
+    </div>
+
+    <div class="card">
+      <h2>Historial</h2>
+      <div id="lista"></div>
+    </div>
+  </section>
+
+  <section id="s-plan">
+    <div class="card">
+      <h2>Plan de entrenamiento sugerido</h2>
+      <p class="aviso" style="margin-top:0">Orientativo. Ajustadlo con su entrenador o con el nutricionista si hay lesiones o cambios de carga.</p>
+      <div id="planFases"></div>
+    </div>
+    <div class="card">
+      <h2>Sesión tipo semanal</h2>
+      <div class="item"><b>Lunes:</b> descanso o rodillo suave 30-45 min</div>
+      <div class="item"><b>Martes:</b> intervalos o umbral (según fase)</div>
+      <div class="item"><b>Miércoles:</b> rodaje base 1-1,5 h</div>
+      <div class="item"><b>Jueves:</b> fuerza en gimnasio 40 min</div>
+      <div class="item"><b>Viernes:</b> descanso o recuperación 45 min</div>
+      <div class="item"><b>Sábado:</b> subidas o tempo 2-3 h</div>
+      <div class="item"><b>Domingo:</b> fondo largo (la sesión clave de la semana)</div>
+    </div>
+  </section>
+
+  <section id="s-nutri">
+    <div class="card">
+      <h2 id="mesTitulo">Seguimiento del mes</h2>
+      <p class="aviso" style="margin-top:0">Pulsa un día para marcarlo como cumplido con el plan del nutricionista. Esta app solo hace seguimiento; la dieta la marca él.</p>
+      <div class="cal" id="calendario"></div>
+      <div class="row" style="margin-top:10px">
+        <button class="secondary" onclick="cambiarMes(-1)">← Mes anterior</button>
+        <button class="secondary" onclick="cambiarMes(1)">Mes siguiente →</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Plan del nutricionista de este mes</h2>
+      <textarea id="planNutri" placeholder="Pega aquí el plan mensual que os envía el nutricionista..."></textarea>
+      <button onclick="guardarPlanNutri()">Guardar plan del mes</button>
+    </div>
+    <div class="card">
+      <h2>Consejos generales</h2>
+      <div class="item">💧 Hidratación: 500-750 ml por hora de salida con calor, con electrolitos si pasan de 2 h.</div>
+      <div class="item">🍌 Antes: carbohidratos fáciles 1-3 h antes (avena, pan, plátano).</div>
+      <div class="item">🥤 Durante: 60-90 g de carbohidratos por hora en salidas largas.</div>
+      <div class="item">🍽️ Después: proteína y carbohidratos en los 30-60 min siguientes.</div>
+      <div class="item">😴 Sueño: 7-9 h; es donde se produce gran parte de la recuperación.</div>
+      <p class="aviso">Consejos generales, no sustituyen las indicaciones del nutricionista.</p>
+    </div>
+  </section>
+
+  <section id="s-datos">
+    <div class="card">
+      <h2>Copia de seguridad</h2>
+      <p class="aviso" style="margin-top:0">Los datos se guardan en el propio iPhone. Exporta una copia de vez en cuando.</p>
+      <button onclick="exportarDatos()">Exportar copia (JSON)</button>
+      <label>Restaurar copia</label>
+      <input type="file" accept=".json" onchange="importarDatos(event)">
+    </div>
+    <div class="card">
+      <h2>Instalar en el iPhone</h2>
+      <p style="font-size:14px;line-height:1.5;margin:0">1. Abre esta página en <b>Safari</b>.<br>2. Pulsa el botón <b>Compartir</b> (cuadrado con flecha).<br>3. Elige <b>"Añadir a pantalla de inicio"</b>.<br>4. Se abrirá como una app más.</p>
+    </div>
+    <div class="card">
+      <h2>Fecha del evento</h2>
+      <label>Fecha de la Mallorca 312</label>
+      <input type="date" id="fechaEventoInput" onchange="guardarFechaEvento(this.value)">
+      <p class="aviso">Ajústala cuando se confirme la fecha exacta.</p>
+    </div>
+    <div class="card">
+      <button class="danger" onclick="borrarTodo()">Borrar todos los datos</button>
+    </div>
+  </section>
+
+</main>
+
+<nav>
+  <button class="on" data-s="s-inicio" onclick="ir('s-inicio',this)">🏠<br>Inicio</button>
+  <button data-s="s-entrenos" onclick="ir('s-entrenos',this)">🚴<br>Entrenos</button>
+  <button data-s="s-plan" onclick="ir('s-plan',this)">📋<br>Plan</button>
+  <button data-s="s-nutri" onclick="ir('s-nutri',this)">🥗<br>Nutrición</button>
+  <button data-s="s-datos" onclick="ir('s-datos',this)">⚙️<br>Datos</button>
+</nav>
+
+<script>
+const KEY = 'mallorca312_v1';
+let db = JSON.parse(localStorage.getItem(KEY) || 'null') || {
+  entrenos: [], nutri: {}, fechaEvento: '2027-04-24', mesActual: null
+};
+function guardar() { localStorage.setItem(KEY, JSON.stringify(db)); }
+
+const hoy = new Date();
+const iso = d => d.toISOString().slice(0,10);
+if (!db.mesActual) db.mesActual = iso(hoy).slice(0,7);
+
+function ir(id, btn) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  window.scrollTo(0,0);
+  if (id === 's-inicio') renderInicio();
+  if (id === 's-entrenos') renderLista();
+  if (id === 's-nutri') renderNutri();
+}
+
+function aHoras(t) {
+  if (!t) return 0;
+  const p = String(t).split(':').map(Number);
+  if (p.length === 2) return p[0] + p[1]/60;
+  if (p.length === 3) return p[0] + p[1]/60 + p[2]/3600;
+  return Number(t) || 0;
+}
+function fmtH(h) { const H = Math.floor(h), M = Math.round((h-H)*60); return H + 'h ' + String(M).padStart(2,'0') + 'm'; }
+function dist(a,b) {
+  const R=6371, toR=x=>x*Math.PI/180;
+  const dLat=toR(b.lat-a.lat), dLon=toR(b.lon-a.lon);
+  const x=Math.sin(dLat/2)**2+Math.cos(toR(a.lat))*Math.cos(toR(b.lat))*Math.sin(dLon/2)**2;
+  return 2*R*Math.asin(Math.sqrt(x));
+}
+
+function renderInicio() {
+  const f = new Date(db.fechaEvento + 'T00:00:00');
+  const dias = Math.ceil((f - new Date(iso(hoy)+'T00:00:00')) / 86400000);
+  document.getElementById('dias').textContent = dias > 0 ? dias + ' días' : (dias === 0 ? '¡Hoy!' : 'Evento pasado');
+  document.getElementById('fechaEvento').textContent = 'Fecha: ' + f.toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'});
+
+  const hace7 = new Date(hoy); hace7.setDate(hoy.getDate()-7);
+  const sem = db.entrenos.filter(e => new Date(e.fecha) >= hace7);
+  document.getElementById('r-km').textContent = sem.reduce((s,e)=>s+e.km,0).toFixed(0);
+  document.getElementById('r-desn').textContent = sem.reduce((s,e)=>s+e.desn,0).toFixed(0);
+  document.getElementById('r-h').textContent = sem.reduce((s,e)=>s+e.horas,0).toFixed(1);
+
+  document.getElementById('t-km').textContent = db.entrenos.reduce((s,e)=>s+e.km,0).toFixed(0);
+  document.getElementById('t-sal').textContent = db.entrenos.length;
+  document.getElementById('t-desn').textContent = db.entrenos.reduce((s,e)=>s+e.desn,0).toFixed(0);
+
+  const consejos = [
+    'Hidrátate antes de tener sed; en salidas largas bebe cada 15-20 min.',
+    'Los días de recuperación son parte del entrenamiento. Dormir bien cuenta tanto como pedalear.',
+    'Las subidas largas se hacen con cadencia alta y esfuerzo constante, no a tirones.',
+    'Comprueba la presión de los neumáticos antes de cada salida.',
+    'Un fondo largo a ritmo cómodo vale más que uno a tope.',
+    'Revisa el plan de este mes con el nutricionista si tienes dudas sobre las comidas.'
+  ];
+  document.getElementById('consejo').textContent = consejos[hoy.getDate() % consejos.length];
+}
+
+function guardarEntreno() {
+  const fecha = document.getElementById('f-fecha').value || iso(hoy);
+  const km = parseFloat(document.getElementById('f-km').value) || 0;
+  const desn = parseFloat(document.getElementById('f-desn').value) || 0;
+  const tiempo = document.getElementById('f-tiempo').value;
+  const horas = aHoras(tiempo);
+  if (km <= 0 && horas <= 0) { alert('Introduce al menos distancia o tiempo.'); return; }
+  db.entrenos.push({
+    id: Date.now(), fecha, tipo: document.getElementById('f-tipo').value,
+    km, desn, horas, tiempo,
+    pot: parseFloat(document.getElementById('f-pot').value) || null,
+    rpe: document.getElementById('f-rpe').value,
+    notas: document.getElementById('f-notas').value, origen: 'manual'
+  });
+  guardar();
+  ['f-km','f-desn','f-tiempo','f-pot','f-notas'].forEach(i => document.getElementById(i).value = '');
+  alert('Salida guardada');
+  renderLista();
+}
+
+function renderLista() {
+  const l = document.getElementById('lista');
+  if (!db.entrenos.length) { l.innerHTML = '<p class="aviso">Todavía no hay salidas registradas.</p>'; return; }
+  l.innerHTML = [...db.entrenos].sort((a,b)=>b.fecha.localeCompare(a.fecha)).map(e => `
+    <div class="item">
+      <b>${e.fecha}</b> · ${e.tipo} ${e.origen==='gpx'?'<span class="tag">Strava</span>':''}<br>
+      <small>${e.km.toFixed(1)} km · ${e.desn.toFixed(0)} m desnivel · ${fmtH(e.horas)}${e.pot?' · '+e.pot+' W':''}${e.rpe?' · RPE '+e.rpe:''}</small>
+      ${e.notas ? `<br><small>${escapar(e.notas)}</small>` : ''}
+      <br><button class="secondary" style="padding:6px;margin-top:6px;font-size:13px" onclick="borrarEntreno(${e.id})">Eliminar</button>
+    </div>`).join('');
+}
+function borrarEntreno(id) {
+  if (!confirm('¿Eliminar esta salida?')) return;
+  db.entrenos = db.entrenos.filter(e => e.id !== id); guardar(); renderLista();
+}
+function escapar(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function importarGPX(ev) {
+  const file = ev.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    const xml = new DOMParser().parseFromString(reader.result, 'application/xml');
+    const pts = [...xml.getElementsByTagName('trkpt')].map(p => ({
+      lat: +p.getAttribute('lat'), lon: +p.getAttribute('lon'),
+      ele: +((p.getElementsByTagName('ele')[0]||{}).textContent || NaN),
+      time: (p.getElementsByTagName('time')[0]||{}).textContent
+    }));
+    if (pts.length < 2) { alert('No se han encontrado puntos en el GPX.'); return; }
+    let km = 0, desn = 0;
+    for (let i = 1; i < pts.length; i++) {
+      km += dist(pts[i-1], pts[i]);
+      const d = pts[i].ele - pts[i-1].ele;
+      if (!isNaN(d) && d > 0.5 && d < 50) desn += d;
+    }
+    const t0 = pts[0].time ? new Date(pts[0].time) : null;
+    const t1 = pts[pts.length-1].time ? new Date(pts[pts.length-1].time) : null;
+    const horas = t0 && t1 ? (t1 - t0) / 3600000 : 0;
+    const nombre = (xml.getElementsByTagName('name')[0]||{}).textContent || file.name;
+    const fecha = t0 ? iso(t0) : iso(hoy);
+    db.entrenos.push({
+      id: Date.now(), fecha, tipo: nombre.slice(0,40), km, desn, horas,
+      tiempo: fmtH(horas), pot: null, rpe: '', notas: 'Importado de Strava: ' + nombre, origen: 'gpx'
+    });
+    guardar();
+    alert(`Importado: ${km.toFixed(1)} km, ${desn.toFixed(0)} m de desnivel, ${fmtH(horas)}`);
+    ev.target.value = '';
+    renderLista();
+  };
+  reader.readAsText(file);
+}
+
+const fases = [
+  { nombre:'Fase 1 · Base (nov - dic 2026)', items:['Volumen progresivo: 4-6 h semanales','Rodajes en zona 2 (conversación cómoda)','Un fondo largo de 2-3 h el domingo','Fuerza básica en gimnasio 1 vez por semana'] },
+  { nombre:'Fase 2 · Construcción (ene - feb 2027)', items:['Volumen 6-9 h semanales','Series de umbral 2x15-20 min','Subidas largas de 20-40 min','Fondo largo de 3-4 h, semana de descarga cada 4'] },
+  { nombre:'Fase 3 · Específica (mar 2027)', items:['Volumen 8-10 h semanales','Simulaciones de subidas y ritmo de carrera','Fondo largo de 4-5 h con bloques a ritmo objetivo','Bajar volumen 1-2 semanas antes del evento'] },
+  { nombre:'Fase 4 · Puesta a punto (abr 2027)', items:['Reducir volumen un 30-40% las dos últimas semanas','Mantener algunas series cortas con intensidad','Revisar bicicleta, neumáticos y material','Descansar bien la semana previa'] }
+];
+document.getElementById('planFases').innerHTML = fases.map(f =>
+  `<div class="phase"><h3>${f.nombre}</h3><ul>${f.items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('');
+
+function renderNutri() {
+  const [y,m] = db.mesActual.split('-').map(Number);
+  document.getElementById('mesTitulo').textContent = new Date(y,m-1,1).toLocaleDateString('es-ES',{month:'long',year:'numeric'});
+  document.getElementById('planNutri').value = (db.nutri[db.mesActual] || {}).plan || '';
+  const dias = ['L','M','X','J','V','S','D'].map(d=>`<div class="h">${d}</div>`);
+  const primer = (new Date(y,m-1,1).getDay()+6)%7;
+  const n = new Date(y,m,0).getDate();
+  const cumplidos = (db.nutri[db.mesActual] || {}).ok || {};
+  let html = dias.join('');
+  for (let i=0;i<primer;i++) html += '<div class="d empty"></div>';
+  for (let d=1; d<=n; d++) {
+    const key = db.mesActual + '-' + String(d).padStart(2,'0');
+    const hoyCls = key === iso(hoy) ? ' today' : '';
+    html += `<div class="d ${cumplidos[key]?'ok':''}${hoyCls}" onclick="toggleDia('${key}')">${d}</div>`;
+  }
+  document.getElementById('calendario').innerHTML = html;
+}
+function toggleDia(key) {
+  const mes = db.mesActual;
+  db.nutri[mes] = db.nutri[mes] || { plan:'', ok:{} };
+  db.nutri[mes].ok[key] = !db.nutri[mes].ok[key];
+  guardar(); renderNutri();
+}
+function cambiarMes(delta) {
+  const [y,m] = db.mesActual.split('-').map(Number);
+  const f = new Date(y, m-1+delta, 1);
+  db.mesActual = f.getFullYear() + '-' + String(f.getMonth()+1).padStart(2,'0');
+  guardar(); renderNutri();
+}
+function guardarPlanNutri() {
+  db.nutri[db.mesActual] = db.nutri[db.mesActual] || { plan:'', ok:{} };
+  db.nutri[db.mesActual].plan = document.getElementById('planNutri').value;
+  guardar(); alert('Plan guardado');
+}
+
+function exportarDatos() {
+  const blob = new Blob([JSON.stringify(db,null,2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'mallorca312-copia-' + iso(hoy) + '.json'; a.click();
+}
+function importarDatos(ev) {
+  const file = ev.target.files[0]; if (!file) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try { db = JSON.parse(r.result); guardar(); alert('Copia restaurada'); renderInicio(); }
+    catch(e) { alert('El archivo no es válido'); }
+  };
+  r.readAsText(file);
+}
+function guardarFechaEvento(v) { if (v) { db.fechaEvento = v; guardar(); renderInicio(); } }
+function borrarTodo() {
+  if (confirm('Se borrarán todas las salidas y datos. ¿Seguro?')) { localStorage.removeItem(KEY); location.reload(); }
+}
+
+document.getElementById('f-fecha').value = iso(hoy);
+document.getElementById('fechaEventoInput').value = db.fechaEvento;
+renderInicio();
+renderLista();
+</script>
+</body>
+</html></body></html>
